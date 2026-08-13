@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <defs>
+    <linearGradient id="accentline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6fb7d9" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6fb7d9" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="500" rx="14" fill="#0d1117"/>
+  <rect x="1.5" y="1.5" width="1097" height="497" rx="13" fill="none" stroke="#30363d" stroke-width="3"/>
+  <rect x="0" y="492" width="1100" height="4" fill="url(#accentline)" opacity="0.9"/>
+
+  <circle cx="28" cy="26" r="6" fill="#ff5f57"/>
+  <circle cx="50" cy="26" r="6" fill="#febc2e"/>
+  <circle cx="72" cy="26" r="6" fill="#28c840"/>
+
+  <g stroke="#6fb7d9" fill="none" stroke-width="1.6" stroke-linecap="round">
+    <rect x="101" y="15.5" width="20" height="17" rx="6"/>
+    <line x1="111" y1="15.5" x2="111" y2="11.5"/>
+  </g>
+  <circle cx="111" cy="10" r="1.6" fill="#6fb7d9"/>
+  <circle cx="106.8" cy="22" r="1.7" fill="#6fb7d9"/>
+  <circle cx="115.2" cy="22" r="1.7" fill="#6fb7d9"/>
+  <path d="M107 27 Q111 30 115 27" stroke="#6fb7d9" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <text x="550" y="31" text-anchor="middle" font-size="13" fill="#8b949e">the acp job loop the provider server runs — events in, deliverable out, escrow released</text>
+
+  <!-- stage 1 -->
+  <rect x="40" y="90" width="180" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="56" y="114" font-size="11" fill="#566070">01</text>
+  <text x="56" y="136" font-size="13" font-weight="700" fill="#6fb7d9">listen</text>
+  <text x="56" y="162" font-size="11" fill="#c9d1d9">acp events listen</text>
+  <text x="56" y="182" font-size="11" fill="#8b949e">background process</text>
+  <text x="56" y="202" font-size="11" fill="#8b949e">→ events.jsonl</text>
+
+  <path d="M226 165 L240 165" stroke="#566070" stroke-width="2.5"/>
+  <path d="M237 159 L244 165 L237 171" fill="none" stroke="#566070" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- stage 2 -->
+  <rect x="250" y="90" width="180" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="266" y="114" font-size="11" fill="#566070">02</text>
+  <text x="266" y="136" font-size="13" font-weight="700" fill="#6fb7d9">drain</text>
+  <text x="266" y="162" font-size="11" fill="#c9d1d9">acp events drain</text>
+  <text x="266" y="182" font-size="11" fill="#8b949e">every 5 seconds</text>
+  <text x="266" y="202" font-size="11" fill="#8b949e">route by tools</text>
+
+  <path d="M436 165 L450 165" stroke="#566070" stroke-width="2.5"/>
+  <path d="M447 159 L454 165 L447 171" fill="none" stroke="#566070" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- stage 3 -->
+  <rect x="460" y="90" width="180" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="476" y="114" font-size="11" fill="#566070">03</text>
+  <text x="476" y="136" font-size="13" font-weight="700" fill="#6fb7d9">setBudget</text>
+  <text x="476" y="162" font-size="11" fill="#c9d1d9">provider set-budget</text>
+  <text x="476" y="182" font-size="11" fill="#8b949e">= offering price</text>
+  <text x="476" y="202" font-size="11" fill="#8b949e">status: accepted</text>
+
+  <path d="M646 165 L660 165" stroke="#566070" stroke-width="2.5"/>
+  <path d="M657 159 L664 165 L657 171" fill="none" stroke="#566070" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- stage 4 -->
+  <rect x="670" y="90" width="180" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="686" y="114" font-size="11" fill="#566070">04</text>
+  <text x="686" y="136" font-size="13" font-weight="700" fill="#6fb7d9">submit</text>
+  <text x="686" y="162" font-size="11" fill="#c9d1d9">execute_offering()</text>
+  <text x="686" y="182" font-size="11" fill="#8b949e">provider submit</text>
+  <text x="686" y="202" font-size="11" fill="#8b949e">status: delivered</text>
+
+  <path d="M856 165 L870 165" stroke="#566070" stroke-width="2.5"/>
+  <path d="M867 159 L874 165 L867 171" fill="none" stroke="#566070" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- stage 5 -->
+  <rect x="880" y="90" width="180" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="896" y="114" font-size="11" fill="#566070">05</text>
+  <text x="896" y="136" font-size="13" font-weight="700" fill="#6fb7d9">terminal</text>
+  <text x="896" y="162" font-size="11" fill="#c9d1d9">completed</text>
+  <text x="896" y="182" font-size="11" fill="#8b949e">rejected</text>
+  <text x="896" y="202" font-size="11" fill="#8b949e">expired</text>
+
+  <!-- job states -->
+  <rect x="40" y="268" width="1020" height="76" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="64" y="296" font-size="12" font-weight="700" fill="#6fb7d9">JobStatus — skills/acp_skill.py</text>
+  <text x="64" y="324" font-size="12" fill="#c9d1d9">pending → accepted → executing → delivered → completed</text>
+  <text x="620" y="324" font-size="12" fill="#566070">off-path: disputed · cancelled</text>
+
+  <!-- persistence -->
+  <rect x="40" y="364" width="1020" height="64" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="64" y="390" font-size="12" font-weight="700" fill="#b18bf5">Supabase — db.upsert_acp_job() on every state transition</text>
+  <text x="64" y="412" font-size="11" fill="#8b949e">tables: acp_jobs · onboarding_forms · latest_state · self_attendance — fire-and-forget, failures never crash the agent</text>
+
+  <text x="550" y="458" text-anchor="middle" font-size="13" fill="#8b949e">events without the provider role are dropped — the server only acts on its own jobs</text>
+</svg>

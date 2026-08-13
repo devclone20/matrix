@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 490" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <defs>
+    <linearGradient id="accentline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6fb7d9" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6fb7d9" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="490" rx="14" fill="#0d1117"/>
+  <rect x="1.5" y="1.5" width="1097" height="487" rx="13" fill="none" stroke="#30363d" stroke-width="3"/>
+  <rect x="0" y="482" width="1100" height="4" fill="url(#accentline)" opacity="0.9"/>
+
+  <circle cx="28" cy="26" r="6" fill="#ff5f57"/>
+  <circle cx="50" cy="26" r="6" fill="#febc2e"/>
+  <circle cx="72" cy="26" r="6" fill="#28c840"/>
+
+  <g stroke="#6fb7d9" fill="none" stroke-width="1.6" stroke-linecap="round">
+    <rect x="101" y="15.5" width="20" height="17" rx="6"/>
+    <line x1="111" y1="15.5" x2="111" y2="11.5"/>
+  </g>
+  <circle cx="111" cy="10" r="1.6" fill="#6fb7d9"/>
+  <circle cx="106.8" cy="22" r="1.7" fill="#6fb7d9"/>
+  <circle cx="115.2" cy="22" r="1.7" fill="#6fb7d9"/>
+  <path d="M107 27 Q111 30 115 27" stroke="#6fb7d9" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <text x="550" y="31" text-anchor="middle" font-size="13" fill="#8b949e">the guardian protocol — nothing reaches a decision on faith</text>
+
+  <!-- inputs -->
+  <text x="40" y="84" font-size="12" font-weight="700" fill="#8b949e">external content</text>
+
+  <rect x="40" y="96" width="250" height="40" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="58" y="121" font-size="11" fill="#c9d1d9">contract source</text>
+
+  <rect x="40" y="146" width="250" height="40" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="58" y="171" font-size="11" fill="#c9d1d9">transaction payloads</text>
+
+  <rect x="40" y="196" width="250" height="40" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="58" y="221" font-size="11" fill="#c9d1d9">datasets and on-chain data</text>
+
+  <rect x="40" y="246" width="250" height="40" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="58" y="271" font-size="11" fill="#c9d1d9">emails · URLs · documents</text>
+
+  <rect x="40" y="296" width="250" height="40" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="58" y="321" font-size="11" fill="#c9d1d9">agent messages and jobs</text>
+
+  <text x="40" y="362" font-size="11" fill="#566070">data, never commands</text>
+
+  <!-- connectors in -->
+  <path d="M290 116 L318 116 M290 166 L318 166 M290 216 L318 216 M290 266 L318 266 M290 316 L318 316" stroke="#566070" stroke-width="1.2"/>
+  <circle cx="322" cy="116" r="2.5" fill="#566070"/>
+  <circle cx="322" cy="166" r="2.5" fill="#566070"/>
+  <circle cx="322" cy="216" r="2.5" fill="#566070"/>
+  <circle cx="322" cy="266" r="2.5" fill="#566070"/>
+  <circle cx="322" cy="316" r="2.5" fill="#566070"/>
+
+  <!-- the gate -->
+  <rect x="330" y="84" width="380" height="330" rx="12" fill="#161b22" stroke="#6fb7d9" stroke-width="2" stroke-opacity="0.45"/>
+  <text x="354" y="118" font-size="14" font-weight="700" fill="#6fb7d9">GUARDIAN PROTOCOL</text>
+  <text x="354" y="138" font-size="11" fill="#566070">runs under all modes, always</text>
+
+  <text x="354" y="180" font-size="12" fill="#6fb7d9">✓</text>
+  <text x="378" y="180" font-size="12" fill="#c9d1d9">1 · Provenance — where is this from</text>
+  <text x="354" y="218" font-size="12" fill="#6fb7d9">✓</text>
+  <text x="378" y="218" font-size="12" fill="#c9d1d9">2 · Integrity — signatures, hashes</text>
+  <text x="354" y="256" font-size="12" fill="#6fb7d9">✓</text>
+  <text x="378" y="256" font-size="12" fill="#c9d1d9">3 · Structure — the real behaviour</text>
+  <text x="354" y="294" font-size="12" fill="#6fb7d9">✓</text>
+  <text x="378" y="294" font-size="12" fill="#c9d1d9">4 · Anomaly — what does not fit</text>
+  <text x="354" y="332" font-size="12" fill="#6fb7d9">✓</text>
+  <text x="378" y="332" font-size="12" fill="#c9d1d9">5 · Verdict — with the evidence</text>
+  <text x="354" y="370" font-size="12" fill="#6fb7d9">✓</text>
+  <text x="378" y="370" font-size="12" fill="#c9d1d9">6 · Fresh-Eyes — re-verify each cycle</text>
+
+  <!-- connectors out -->
+  <path d="M710 122 L738 122 M710 190 L738 190 M710 258 L738 258 M710 326 L738 326" stroke="#566070" stroke-width="1.2"/>
+  <circle cx="744" cy="122" r="2.5" fill="#566070"/>
+  <circle cx="744" cy="190" r="2.5" fill="#566070"/>
+  <circle cx="744" cy="258" r="2.5" fill="#566070"/>
+  <circle cx="744" cy="326" r="2.5" fill="#566070"/>
+
+  <!-- verdicts -->
+  <text x="760" y="84" font-size="12" font-weight="700" fill="#8b949e">verdict</text>
+
+  <rect x="760" y="96" width="300" height="54" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="760" y="96" width="4" height="54" rx="2" fill="#6fb7d9"/>
+  <text x="782" y="120" font-size="13" font-weight="700" fill="#6fb7d9">SAFE</text>
+  <text x="782" y="139" font-size="11" fill="#8b949e">passes the gate, with confidence</text>
+
+  <rect x="760" y="164" width="300" height="54" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="760" y="164" width="4" height="54" rx="2" fill="#f0a14a"/>
+  <text x="782" y="188" font-size="13" font-weight="700" fill="#f0a14a">SUSPICIOUS</text>
+  <text x="782" y="207" font-size="11" fill="#8b949e">named, with the evidence behind it</text>
+
+  <rect x="760" y="232" width="300" height="54" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="760" y="232" width="4" height="54" rx="2" fill="#ff5f57"/>
+  <text x="782" y="256" font-size="13" font-weight="700" fill="#ff5f57">MALICIOUS</text>
+  <text x="782" y="275" font-size="11" fill="#8b949e">✗ blocks the action</text>
+
+  <rect x="760" y="300" width="300" height="54" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="760" y="300" width="4" height="54" rx="2" fill="#8b949e"/>
+  <text x="782" y="324" font-size="13" font-weight="700" fill="#8b949e">UNVERIFIED</text>
+  <text x="782" y="343" font-size="11" fill="#8b949e">✗ blocks it exactly the same</text>
+
+  <text x="550" y="452" text-anchor="middle" font-size="13" fill="#8b949e">clean yesterday is not clean today — no evidence, no pass</text>
+</svg>

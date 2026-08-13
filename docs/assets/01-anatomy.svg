@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 470" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <defs>
+    <linearGradient id="accentline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6fb7d9" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6fb7d9" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="470" rx="14" fill="#0d1117"/>
+  <rect x="1.5" y="1.5" width="1097" height="467" rx="13" fill="none" stroke="#30363d" stroke-width="3"/>
+  <rect x="0" y="462" width="1100" height="4" fill="url(#accentline)" opacity="0.9"/>
+
+  <circle cx="28" cy="26" r="6" fill="#ff5f57"/>
+  <circle cx="50" cy="26" r="6" fill="#febc2e"/>
+  <circle cx="72" cy="26" r="6" fill="#28c840"/>
+
+  <g stroke="#6fb7d9" fill="none" stroke-width="1.6" stroke-linecap="round">
+    <rect x="101" y="15.5" width="20" height="17" rx="6"/>
+    <line x1="111" y1="15.5" x2="111" y2="11.5"/>
+  </g>
+  <circle cx="111" cy="10" r="1.6" fill="#6fb7d9"/>
+  <circle cx="106.8" cy="22" r="1.7" fill="#6fb7d9"/>
+  <circle cx="115.2" cy="22" r="1.7" fill="#6fb7d9"/>
+  <path d="M107 27 Q111 30 115 27" stroke="#6fb7d9" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+  <text x="550" y="31" text-anchor="middle" font-size="13" fill="#8b949e">two layers, one soul — the pi substrate you talk to, and the economy runtime already live</text>
+
+  <!-- three names -->
+  <rect x="294" y="56" width="156" height="30" rx="15" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="372" y="76" text-anchor="middle" font-size="12" fill="#c9d1d9">MATRIX — the name</text>
+
+  <rect x="464" y="56" width="164" height="30" rx="15" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="546" y="76" text-anchor="middle" font-size="12" fill="#c9d1d9">iNFT — the species</text>
+
+  <rect x="642" y="56" width="164" height="30" rx="15" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="724" y="76" text-anchor="middle" font-size="12" fill="#c9d1d9">Pi — the substrate</text>
+
+  <!-- layer A -->
+  <rect x="40" y="110" width="510" height="230" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="40" y="110" width="4" height="230" rx="2" fill="#6fb7d9" opacity="0.7"/>
+  <text x="64" y="142" font-size="14" font-weight="700" fill="#6fb7d9">Pi substrate — the overlay</text>
+  <text x="64" y="166" font-size="12" fill="#c9d1d9">the interactive MATRIX you talk to — BYOK</text>
+
+  <rect x="60" y="182" width="470" height="104" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="76" y="199" font-size="11" fill="#c9d1d9">identity.json</text>
+  <text x="200" y="199" font-size="11" fill="#8b949e">the names, read by the soul</text>
+  <text x="76" y="219" font-size="11" fill="#c9d1d9">soul/</text>
+  <text x="200" y="219" font-size="11" fill="#8b949e">neural_soul.md · lineage/</text>
+  <text x="76" y="239" font-size="11" fill="#c9d1d9">.pi/</text>
+  <text x="200" y="239" font-size="11" fill="#8b949e">wiring + appended soul layer</text>
+  <text x="76" y="259" font-size="11" fill="#c9d1d9">scripts/</text>
+  <text x="200" y="259" font-size="11" fill="#8b949e">setup · boot · personalize</text>
+  <text x="76" y="279" font-size="11" fill="#c9d1d9">skills/cmux/</text>
+  <text x="200" y="279" font-size="11" fill="#8b949e">20 recipes (MIT)</text>
+
+  <text x="64" y="314" font-size="12" fill="#566070">boot: bash scripts/boot.sh (pi -a)</text>
+
+  <!-- layer B -->
+  <rect x="566" y="110" width="494" height="230" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="566" y="110" width="4" height="230" rx="2" fill="#b18bf5" opacity="0.7"/>
+  <text x="590" y="142" font-size="14" font-weight="700" fill="#b18bf5">Economy runtime</text>
+  <text x="590" y="166" font-size="12" fill="#c9d1d9">deployed autonomous economy — already live</text>
+
+  <rect x="586" y="182" width="454" height="104" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="602" y="199" font-size="11" fill="#c9d1d9">apps/agent/</text>
+  <text x="740" y="199" font-size="11" fill="#8b949e">server.py · iclone/ package</text>
+  <text x="614" y="219" font-size="11" fill="#c9d1d9">skills/</text>
+  <text x="740" y="219" font-size="11" fill="#8b949e">acp · crypto · platform · base</text>
+  <text x="614" y="239" font-size="11" fill="#c9d1d9">training/</text>
+  <text x="740" y="239" font-size="11" fill="#8b949e">7 modules · 2x daily</text>
+  <text x="614" y="259" font-size="11" fill="#c9d1d9">tests/</text>
+  <text x="740" y="259" font-size="11" fill="#8b949e">243 tests, 8 modules</text>
+  <text x="602" y="279" font-size="11" fill="#c9d1d9">infra/</text>
+  <text x="740" y="279" font-size="11" fill="#8b949e">ops · systemd · launchd · sql</text>
+
+  <text x="590" y="314" font-size="12" fill="#566070">the acp CLI is the only sanctioned economic hand</text>
+
+  <!-- shared soul -->
+  <path d="M295 340 L295 360 M805 340 L805 360" stroke="#566070" stroke-width="1.5"/>
+  <rect x="40" y="360" width="1020" height="46" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="64" cy="383" r="4" fill="#6fb7d9"/>
+  <text x="82" y="388" font-size="12" fill="#c9d1d9">one soul — soul/neural_soul.md v1.0.0 · four lobes · Guardian discipline · the moat is the soul, not the model</text>
+
+  <text x="550" y="436" text-anchor="middle" font-size="13" fill="#8b949e">the overlay was added without touching the existing app or the neural soul</text>
+</svg>
