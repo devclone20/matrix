@@ -46,9 +46,9 @@ enough for any LLM to verify and **regenerate the agent's entire monorepo** (§4
 `inft-i01` = **iNFT genesis, version i01** — the first iNFT preset built on the
 **iCLONE soul line**. It is **not one agent's body**; it is the **global template**
 every buyer forges their own personal iNFT agent from (GitHub "template repository",
-public). The buyer pastes one line to their assistant, which reads
-[`FORGE.md`](../FORGE.md) and scaffolds a personalized, single-commit repo — named by
-the buyer, with their (local-only) owner profile — then boots it.
+public). The buyer pastes one line to their assistant, which reads the template's
+`FORGE.md` and scaffolds a personalized, single-commit repo — named by the buyer, with
+their (local-only) owner profile — then boots it.
 
 The canonical *body definition* stays `inft-i01`; each buyer's *instance* is generated
 from it. What is personalized per buyer: the **marketplace name** (`identity.json`) and

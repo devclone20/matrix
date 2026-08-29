@@ -1,6 +1,7 @@
 #!/bin/bash
-# iCLONE — sync local com GitHub (devclone20/iclone)
-# Corre: ./sync.sh
-# Ou adiciona ao crontab: */30 * * * * /Users/alexaist1107397/Desktop/AI/iclone/sync.sh
+# MATRIX — sync this checkout with GitHub (devclone20/matrix).
+# Run: ./sync.sh
+# Or from crontab, with the absolute path of your own checkout:
+#   */30 * * * * /path/to/matrix/sync.sh
 cd "$(dirname "$0")"
-git fetch origin && git pull --ff-only origin main && echo "✓ iCLONE synced $(date)"
+git fetch origin && git pull --ff-only origin main && echo "✓ MATRIX synced $(date)"

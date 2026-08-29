@@ -2,8 +2,9 @@
 
 > The regeneration contract. This is the procedure any capable LLM follows when a
 > holder presents iNFT metadata and says: **"create the monorepo of my iNFT agent."**
-> For a fresh purchase, the friendlier path is [`../FORGE.md`](../FORGE.md); this file
-> is the integrity-critical version for regenerating a *specific* token's agent.
+> For a fresh purchase, the friendlier path is `FORGE.md` in the
+> [inft-i01](https://github.com/devclone20/inft-i01) template; this file is the
+> integrity-critical version for regenerating a *specific* token's agent.
 
 ## Inputs you receive
 

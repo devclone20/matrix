@@ -82,7 +82,8 @@ docker-compose.override.yml
 # Misc
 .cache/
 tmp/
-temp/id_rsa
+temp/
+id_rsa
 id_ed25519
 *_state.json
 *.pid

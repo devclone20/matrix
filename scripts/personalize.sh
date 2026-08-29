@@ -45,29 +45,43 @@ apply_owner() {
 set_name() {
   local newname="$1" force="${2:-}"
   local current
-  current="$(node -p "require('./identity.json').marketplace_name" 2>/dev/null || echo "")"
+
+  # python3 does the JSON surgery: the Hermes installer brings no Node, and the economy
+  # runtime already requires python3, so it is the one interpreter this repo can count on.
+  command -v python3 >/dev/null 2>&1 || { say "✗ python3 is required to rewrite identity.json."; exit 1; }
+
+  current="$(python3 -c "import json;print(json.load(open('identity.json'))['marketplace_name'])" 2>/dev/null || echo "")"
 
   if [ "$current" != "$PLACEHOLDER" ] && [ -n "$current" ] && [ "$force" != "--force" ]; then
     say "✓ Already personalized as \"$current\" (idempotent; pass --force to change)."
     return 0
   fi
 
-  node -e '
-    const fs=require("fs"), p="./identity.json";
-    const j=JSON.parse(fs.readFileSync(p,"utf8"));
-    j.marketplace_name=process.argv[1];
-    delete j.marketplace_name_note;
-    fs.writeFileSync(p, JSON.stringify(j,null,2)+"\n");
-  ' "$newname"
+  python3 - "$newname" <<'PY'
+import json, sys
+name = sys.argv[1]
+with open("identity.json", encoding="utf-8") as fh:
+    j = json.load(fh)
+j["marketplace_name"] = name
+j.pop("marketplace_name_note", None)
+with open("identity.json", "w", encoding="utf-8") as fh:
+    json.dump(j, fh, indent=2)
+    fh.write("\n")
+PY
   say "✓ identity.json marketplace_name → \"$newname\""
 
   # Reflect the name in the metadata template (name field only; leave <...> mint fields).
-  node -e '
-    const fs=require("fs"), p="./metadata/metadata.template.json";
-    if(fs.existsSync(p)){const j=JSON.parse(fs.readFileSync(p,"utf8"));
-      j.name=process.argv[1];
-      fs.writeFileSync(p, JSON.stringify(j,null,2)+"\n");}
-  ' "$newname" 2>/dev/null || true
+  python3 - "$newname" <<'PY' 2>/dev/null || true
+import json, os, sys
+p = "metadata/metadata.template.json"
+if os.path.exists(p):
+    with open(p, encoding="utf-8") as fh:
+        j = json.load(fh)
+    j["name"] = sys.argv[1]
+    with open(p, "w", encoding="utf-8") as fh:
+        json.dump(j, fh, indent=2)
+        fh.write("\n")
+PY
 
   [ -x scripts/make-manifest.sh ] && bash scripts/make-manifest.sh >/dev/null && say "✓ manifest regenerated"
   say "  Your agent answers to \"$newname\", \"iNFT\", and \"Hermes\"."

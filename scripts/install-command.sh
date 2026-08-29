@@ -14,8 +14,19 @@ cd "$(dirname "$0")/.."
 REPO="$(pwd)"
 
 # ── resolve the command name (slug of the agent's name) ──────────────────────────────
+# Read identity.json with python3 (what setup.sh uses; the Hermes installer brings no
+# Node), falling back to node where python3 is absent. Never guess the name silently —
+# a wrong launcher name is worse than a loud failure.
+read_name() {
+  python3 -c "import json;print(json.load(open('identity.json'))['marketplace_name'])" 2>/dev/null \
+    || node -p "require('./identity.json').marketplace_name" 2>/dev/null \
+    || true
+}
 RAW="${1:-}"
-[ -z "$RAW" ] && RAW="$(node -p "require('./identity.json').marketplace_name" 2>/dev/null || echo iclone)"
+if [ -z "$RAW" ]; then
+  RAW="$(read_name)"
+  [ -n "$RAW" ] || { echo "✗ could not read marketplace_name from identity.json (needs python3 or node)."; echo "  Pass the name explicitly:  scripts/install-command.sh \"MATRIX\""; exit 1; }
+fi
 slug() { printf '%s' "$1" | tr '[:upper:] ' '[:lower:]-' | tr -cd 'a-z0-9-' | sed 's/-\{2,\}/-/g; s/^-//; s/-$//'; }
 CMD="$(slug "$RAW")"; [ -z "$CMD" ] && CMD="iclone"
 

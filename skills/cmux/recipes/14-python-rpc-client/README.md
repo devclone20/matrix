@@ -5,8 +5,8 @@
 ## Run
 
 ```bash
-chmod +x recipe.sh
-./recipe.sh
+chmod +x recipe.py
+./recipe.py
 ```
 
-See [`recipe.sh`](./recipe.sh) for the full script.
+See [`recipe.py`](./recipe.py) for the full script.
