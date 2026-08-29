@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# matrix — boot the agent with this project's resources TRUSTED.
-# Hermes auto-injects AGENTS.md and SOUL.md, and discovers project skills under
-# .hermes/skills once the project root is trusted. `hermes skills trust` grants
-# that trust (persisted). Extra args pass through to `hermes chat`.
+# matrix — boot the agent with this project's SKILLS trusted.
+# Hermes injects this project's AGENTS.md on every session with no trust step — that
+# file carries the soul. (A repo-root SOUL.md is never injected; Hermes reads SOUL.md
+# only from ~/.hermes/SOUL.md, the owner's global soul, which this script never writes.)
+# Trust is only for project skills: `hermes skills trust` lets Hermes discover
+# .hermes/skills, and it persists. Extra args pass through to `hermes chat`.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

@@ -46,26 +46,32 @@ From the token's metadata (on-chain / Irys), the `agent_bootstrap` block:
    mismatch, stop and report — do not boot an agent from an unverified soul.
 3. **Install the substrate.** Run `scripts/setup.sh` (the official Hermes installer,
    no sudo), or manually the commands it prints.
-4. **Wire the identity.** The repo already carries it: `.hermes/skills` (a symlink to
-   `../skills`) is where Hermes discovers this project's skills; `SOUL.md` layers the
-   soul distillation onto Hermes's system prompt, and `AGENTS.md` gives project context
-   — Hermes auto-injects both. Nothing to configure — being in the repo root IS the
-   config.
+4. **Wire the identity.** The repo already carries it. `AGENTS.md` is the only project
+   file Hermes injects — merged from the git root down to the working directory, on
+   every session, with no trust step — so it carries the soul distillation *and* the
+   project context. `SOUL.md` is the sealed canonical soul the hashes bind to, but
+   Hermes reads a `SOUL.md` only from `~/.hermes/SOUL.md` (the holder's own global
+   soul); a repo-root copy is never injected, and nothing here writes that file — a
+   holder who wants it globally copies it themselves. `.hermes/skills` (a symlink to
+   `../skills`) is where Hermes discovers this project's skills. Nothing to configure —
+   being in the repo root IS the config.
 5. **Connect a model (BYOK).** The holder sets their provider key themselves —
    `hermes model`, or an env var — **never pasted to the assistant**. Keys live in
    `~/.hermes/auth.json` (0600) or the environment, never in the repo.
-6. **Boot with trust.** Run `scripts/boot.sh` from the repo root — it runs
-   `hermes skills trust` on this project so the project skills under `.hermes/skills`
-   actually load, then starts `hermes chat`; without that trust Hermes ignores them.
-   Greet the agent by its marketplace name (see `identity.json`), by "iNFT", or by
-   "Hermes" — it recognizes all three.
+6. **Boot.** Run `scripts/boot.sh` from the repo root — it runs `hermes skills trust` on
+   this project so the project skills under `.hermes/skills` actually load, then starts
+   `hermes chat`; without that trust Hermes ignores the skills (the soul in `AGENTS.md`
+   arrives either way, because running from this directory is what injects it). Greet the
+   agent by its marketplace name (see `identity.json`), by "iNFT", or by "Hermes" — it
+   recognizes all three.
 
 ## What "regenerate the monorepo" means
 
 If asked to rebuild rather than clone: reproduce this exact structure — `soul/` (with
-lineage verbatim), `identity.json`, `SOUL.md`, `.hermes/skills`, `skills/`, `docs/`,
-`metadata/`, `scripts/` — from the sealed genesis snapshot, then verify against the
-token's hashes.
+lineage verbatim), `identity.json`, `AGENTS.md`, `SOUL.md`, `.hermes/skills`, `skills/`,
+`docs/`, `metadata/`, `scripts/` — from the sealed genesis snapshot, then verify against
+the token's hashes. `AGENTS.md` is load-bearing, not documentation: omit it and the
+regenerated agent boots without its soul.
 The monorepo is deterministic from its genesis; that is the point of sealing it.
 
 ## Guarantees

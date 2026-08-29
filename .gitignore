@@ -20,6 +20,10 @@ auth.json
 .hermes/sessions/
 .hermes/owner.local.md
 **/owner.local.md
+# personalized project prompt (AGENTS.md + owner profile), written by
+# scripts/personalize.sh --apply-owner. Hermes injects it in place of AGENTS.md.
+AGENTS.override.md
+**/AGENTS.override.md
 
 # Python
 __pycache__/

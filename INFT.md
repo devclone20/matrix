@@ -20,7 +20,7 @@ chain block; the body is chain-agnostic and works wherever its token lives.
 ```bash
 bash scripts/setup.sh              # install the Hermes substrate (official installer, no sudo)
 hermes model                       # connect YOUR model key (BYOK — Nous Portal, OpenRouter, …)
-bash scripts/boot.sh               # boot MATRIX with its soul + skills (trusts this project)
+bash scripts/boot.sh               # boot MATRIX (trusts this project's skills, then `hermes chat`)
 bash scripts/install-command.sh    # then type `matrix` in the CLONE FRAME iT terminal
 ```
 
@@ -29,10 +29,13 @@ bash scripts/install-command.sh    # then type `matrix` in the CLONE FRAME iT te
 MATRIX already carries EconomyOS (Virtuals ACP (provider), ERC-8183 escrow), driven by the `acp` CLI. It is **not** rebuilt here — see `soul/neural_soul.md` and the app runtime.
 
 ## Map
-See [`AGENTS.md`](AGENTS.md). Concept: [`docs/INFT_CONCEPT.md`](docs/INFT_CONCEPT.md) ·
-[`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md).
+See [`AGENTS.md`](AGENTS.md) — the one project file Hermes injects, so it carries the soul as
+well as the map. [`SOUL.md`](SOUL.md) is the same soul sealed and hashed; it reaches an agent
+only if the owner copies it to `~/.hermes/SOUL.md`. Concept:
+[`docs/INFT_CONCEPT.md`](docs/INFT_CONCEPT.md) · [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md).
 
 ## Security & privacy
 Public repo: no secrets/keys/PII committed. Your model key is typed into your own terminal
-(`hermes model`), never handed to any assistant. The owner profile is folded into
-`SOUL.md` **locally** and untracked (`scripts/personalize.sh --apply-owner`).
+(`hermes model`), never handed to any assistant. The owner profile goes into the gitignored
+`AGENTS.override.md`, which Hermes injects in place of `AGENTS.md`
+(`scripts/personalize.sh --apply-owner`) — it reaches the agent, it never reaches the repo.

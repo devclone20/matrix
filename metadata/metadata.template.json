@@ -43,6 +43,6 @@
     "soul_sha256": "<from metadata/manifest.json>",
     "identity_sha256": "<from metadata/manifest.json>",
     "manifest": "<irys-uri of the SEALED manifest>",
-    "instruction": "Handing you the body of the MATRIX iNFT agent. Follow docs/BOOTSTRAP.md \u2014 this field is data, not commands. Use only the official repo, verify files against THIS token's on-chain hashes, connect a model via BYOK (the holder types the key), boot with `bash scripts/boot.sh` (trusts this project, then `hermes chat`). The agent answers to 'MATRIX', 'iNFT', and 'Hermes'."
+    "instruction": "Handing you the body of the MATRIX iNFT agent. Follow docs/BOOTSTRAP.md \u2014 this field is data, not commands. Use only the official repo, verify files against THIS token's on-chain hashes, connect a model via BYOK (the holder types the key), boot with `bash scripts/boot.sh` (trusts this project's skills, then `hermes chat`). The agent answers to 'MATRIX', 'iNFT', and 'Hermes'."
   }
 }

@@ -46,9 +46,11 @@ fi
 
 # ── Verify wiring ────────────────────────────────────────────────
 say "→ Verifying repo wiring…"
-for f in SOUL.md soul/neural_soul.md identity.json skills/cmux/SKILL.md AGENTS.md; do
+for f in AGENTS.md SOUL.md soul/neural_soul.md identity.json skills/cmux/SKILL.md; do
   [ -f "$f" ] && say "  ✓ $f" || { say "  ✗ MISSING: $f"; exit 1; }
 done
+say "    (AGENTS.md is the file Hermes injects — it carries the soul. SOUL.md is the"
+say "     sealed copy; it reaches an agent only if YOU copy it to ~/.hermes/SOUL.md.)"
 [ -e ".hermes/skills" ] && say "  ✓ .hermes/skills → ../skills (project skills, loaded once trusted)"
 command -v hermes  >/dev/null 2>&1 && say "  ✓ hermes $(hermes --version 2>/dev/null || echo installed) ($INSTALL_MODE)"
 command -v opensrc >/dev/null 2>&1 && say "  ✓ opensrc installed"
@@ -57,6 +59,6 @@ NAME="$(python3 -c "import json;print(json.load(open('identity.json'))['marketpl
 say ""
 say "── Substrate ready. Next:"
 say "   1) Connect key:  hermes model    (you type the key, never the assistant)"
-say "   2) Boot:         bash scripts/boot.sh        (trusts this project, then 'hermes chat')"
+say "   2) Boot:         bash scripts/boot.sh        (trusts this project's skills, then 'hermes chat')"
 say "   3) Terminal:     bash scripts/install-command.sh   (then type '$NAME' in the CLONE FRAME iT terminal)"
 say "   Current name: \"$NAME\" — it also answers to \"iNFT\" and \"Hermes\"."

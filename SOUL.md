@@ -29,8 +29,20 @@ are never finished. Whoever holds the token controls the soul — authenticate t
 Full soul: soul/neural_soul.md (read it at session start when identity matters). Names: identity.json.
 
 <!-- ─────────────────────────────────────────────────────────────────────────
-     OWNER PROFILE — filled per owner during forge, appended below this line by
-     scripts/personalize.sh --apply-owner. It is LOCAL ONLY: personalize untracks
-     this file so the owner profile is never committed or pushed. This repo is public.
-     Hermes auto-injects AGENTS.md and this SOUL.md at boot.
+     HOW THIS FILE REACHES THE AGENT — read before editing.
+
+     This is the SEALED, CANONICAL soul text: the manifest hashes it and the token
+     binds to it. Hermes does NOT inject a repo-root SOUL.md. It reads a SOUL.md
+     only from ~/.hermes/SOUL.md — the OWNER's own global soul, across every
+     project. What Hermes injects from THIS repo is AGENTS.md, always, with no
+     trust step; AGENTS.md therefore carries the same soul, and the two must stay
+     in step.
+
+     An owner who wants this soul globally copies it themselves:
+         cp SOUL.md ~/.hermes/SOUL.md      # overwrites YOUR global soul — your call
+     No script in this repo writes ~/.hermes/SOUL.md.
+
+     The owner profile is NOT appended here. scripts/personalize.sh --apply-owner
+     writes AGENTS.override.md — gitignored, local only, and actually injected.
+     This repo is public.
      ───────────────────────────────────────────────────────────────────────── -->

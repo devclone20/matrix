@@ -3,40 +3,49 @@
 #
 #   personalize.sh "Agent Name"     Set the marketplace name (won't clobber an
 #                                   already-personalized name without --force).
-#   personalize.sh --apply-owner    Fold .hermes/owner.local.md into the LOCAL
-#                                   SOUL.md and untrack that file so
-#                                   the owner profile is never committed.
+#   personalize.sh --apply-owner    Generate the LOCAL, gitignored AGENTS.override.md
+#                                   = tracked AGENTS.md + .hermes/owner.local.md, so
+#                                   the owner profile reaches the agent without ever
+#                                   being committed.
 #   Flags: --force  overwrite an existing name.
+#
+# Why AGENTS.override.md and not SOUL.md: Hermes injects AGENTS.md from the project on
+# every session, and per directory `AGENTS.override.md` wins over `AGENTS.md` — the
+# documented way to keep a personal, gitignored override beside the committed file. A
+# repo-root SOUL.md is never injected (Hermes reads SOUL.md only from ~/.hermes/SOUL.md,
+# the owner's global soul, which this script must never touch). Because the override
+# REPLACES AGENTS.md for that directory, it is regenerated from AGENTS.md every run —
+# re-run this after editing AGENTS.md.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 PLACEHOLDER="iNFT i01"
-MARKER="<!-- ─────────────────────────────────────────────────────────────────────────"
 SENTINEL="<!-- OWNER-PROFILE-APPLIED -->"
 
 say() { printf '%s\n' "$*"; }
 
 apply_owner() {
   local prof=".hermes/owner.local.md"
-  local target="SOUL.md"
+  local base="AGENTS.md"
+  local target="AGENTS.override.md"
   [ -f "$prof" ] || { say "✗ $prof not found. Write the owner profile there first (see owner/OWNER.example.md)."; exit 1; }
+  [ -f "$base" ] || { say "✗ $base not found — it is the file Hermes injects; cannot build $target without it."; exit 1; }
 
-  if grep -qF "$SENTINEL" "$target" 2>/dev/null; then
-    say "✓ Owner profile already applied — nothing to do (idempotent)."
-  else
-    { printf '\n%s\n\n## OWNER PROFILE\n\n' "$SENTINEL"; cat "$prof"; } >> "$target"
-    say "✓ Owner profile folded into $target (local only)."
-  fi
-
-  # Untrack the personalized system prompt so PII is never committed/pushed.
+  # Gitignore BEFORE writing: the override carries PII and this repo is public.
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    git rm --cached --quiet "$target" 2>/dev/null || true
-    grep -qxF "SOUL.md" .gitignore 2>/dev/null || printf '\n# personalized system prompt (contains owner profile)\nSOUL.md\n' >> .gitignore
+    grep -qxF "$target" .gitignore 2>/dev/null \
+      || printf '\n# personalized project prompt (contains owner profile) — local only\n%s\n' "$target" >> .gitignore
   fi
+
+  # Regenerated from AGENTS.md every run: the override REPLACES AGENTS.md for this
+  # directory, so a stale copy would silently pin an old soul. Never appended to.
+  { cat "$base"; printf '\n%s\n\n## OWNER PROFILE\n\n' "$SENTINEL"; cat "$prof"; } > "$target"
+  say "✓ $target written = $base + owner profile (local only, regenerated from $base)."
+  say "  Hermes injects it in place of $base; $base stays tracked and unchanged."
 
   # Safety check: owner files must be ignored.
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    for f in .hermes/owner.local.md SOUL.md; do
+    for f in "$prof" "$target"; do
       git check-ignore -q "$f" && say "  ✓ $f is gitignored" || say "  ⚠ $f is NOT ignored — do not push until fixed"
     done
   fi
@@ -88,7 +97,7 @@ PY
 }
 
 case "${1:-}" in
-  ""|-h|--help) say "Usage: personalize.sh \"Agent Name\" [--force]  |  personalize.sh --apply-owner"; exit 0 ;;
+  ""|-h|--help) say "Usage: personalize.sh \"Agent Name\" [--force]  |  personalize.sh --apply-owner  (writes the gitignored AGENTS.override.md)"; exit 0 ;;
   --apply-owner) apply_owner ;;
   *) set_name "$1" "${2:-}" ;;
 esac
