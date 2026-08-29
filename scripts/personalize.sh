@@ -3,8 +3,8 @@
 #
 #   personalize.sh "Agent Name"     Set the marketplace name (won't clobber an
 #                                   already-personalized name without --force).
-#   personalize.sh --apply-owner    Fold .pi/owner.local.md into the LOCAL
-#                                   .pi/APPEND_SYSTEM.md and untrack that file so
+#   personalize.sh --apply-owner    Fold .hermes/owner.local.md into the LOCAL
+#                                   SOUL.md and untrack that file so
 #                                   the owner profile is never committed.
 #   Flags: --force  overwrite an existing name.
 set -euo pipefail
@@ -17,8 +17,8 @@ SENTINEL="<!-- OWNER-PROFILE-APPLIED -->"
 say() { printf '%s\n' "$*"; }
 
 apply_owner() {
-  local prof=".pi/owner.local.md"
-  local target=".pi/APPEND_SYSTEM.md"
+  local prof=".hermes/owner.local.md"
+  local target="SOUL.md"
   [ -f "$prof" ] || { say "✗ $prof not found. Write the owner profile there first (see owner/OWNER.example.md)."; exit 1; }
 
   if grep -qF "$SENTINEL" "$target" 2>/dev/null; then
@@ -31,12 +31,12 @@ apply_owner() {
   # Untrack the personalized system prompt so PII is never committed/pushed.
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     git rm --cached --quiet "$target" 2>/dev/null || true
-    grep -qxF ".pi/APPEND_SYSTEM.md" .gitignore 2>/dev/null || printf '\n# personalized system prompt (contains owner profile)\n.pi/APPEND_SYSTEM.md\n' >> .gitignore
+    grep -qxF "SOUL.md" .gitignore 2>/dev/null || printf '\n# personalized system prompt (contains owner profile)\nSOUL.md\n' >> .gitignore
   fi
 
   # Safety check: owner files must be ignored.
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    for f in .pi/owner.local.md .pi/APPEND_SYSTEM.md; do
+    for f in .hermes/owner.local.md SOUL.md; do
       git check-ignore -q "$f" && say "  ✓ $f is gitignored" || say "  ⚠ $f is NOT ignored — do not push until fixed"
     done
   fi
@@ -70,7 +70,7 @@ set_name() {
   ' "$newname" 2>/dev/null || true
 
   [ -x scripts/make-manifest.sh ] && bash scripts/make-manifest.sh >/dev/null && say "✓ manifest regenerated"
-  say "  Your agent answers to \"$newname\", \"iNFT\", and \"Pi\"."
+  say "  Your agent answers to \"$newname\", \"iNFT\", and \"Hermes\"."
 }
 
 case "${1:-}" in

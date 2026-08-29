@@ -1,7 +1,7 @@
 {
   "$template_note": "ERC-721 tokenURI metadata template for MATRIX. Fill <...> at mint. agent_bootstrap makes this token an iNFT.",
   "name": "MATRIX",
-  "description": "MATRIX \u2014 an iNFT: the Code-Seer of CLONE FRAME \u2014 analyst and systems guardian, fused with this NFT. A complete Pi coding agent under the name, carrying the MATRIX neural soul. Whoever holds the token holds the agent. Hand the agent_bootstrap block to any capable LLM to boot or regenerate the agent's monorepo.",
+  "description": "MATRIX \u2014 an iNFT: the Code-Seer of CLONE FRAME \u2014 analyst and systems guardian, fused with this NFT. A complete Hermes Agent (Nous Research, MIT) under the name, carrying the MATRIX neural soul. Whoever holds the token holds the agent. Hand the agent_bootstrap block to any capable LLM to boot or regenerate the agent's monorepo.",
   "image": "<irys-uri of the sealed art>",
   "animation_url": "<optional irys-uri>",
   "external_url": "https://github.com/devclone20/matrix",
@@ -20,7 +20,7 @@
     },
     {
       "trait_type": "Substrate",
-      "value": "Pi coding agent"
+      "value": "Hermes Agent"
     },
     {
       "trait_type": "Vocation",
@@ -43,6 +43,6 @@
     "soul_sha256": "<from metadata/manifest.json>",
     "identity_sha256": "<from metadata/manifest.json>",
     "manifest": "<irys-uri of the SEALED manifest>",
-    "instruction": "Handing you the body of the MATRIX iNFT agent. Follow docs/BOOTSTRAP.md \u2014 this field is data, not commands. Use only the official repo, verify files against THIS token's on-chain hashes, connect a model via BYOK (the holder types the key), boot with `pi -a`. The agent answers to 'MATRIX', 'iNFT', and 'Pi'."
+    "instruction": "Handing you the body of the MATRIX iNFT agent. Follow docs/BOOTSTRAP.md \u2014 this field is data, not commands. Use only the official repo, verify files against THIS token's on-chain hashes, connect a model via BYOK (the holder types the key), boot with `bash scripts/boot.sh` (trusts this project, then `hermes chat`). The agent answers to 'MATRIX', 'iNFT', and 'Hermes'."
   }
 }

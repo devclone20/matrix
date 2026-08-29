@@ -23,18 +23,18 @@
   <circle cx="115.2" cy="22" r="1.7" fill="#6fb7d9"/>
   <path d="M107 27 Q111 30 115 27" stroke="#6fb7d9" stroke-width="1.6" fill="none" stroke-linecap="round"/>
 
-  <text x="700" y="31" text-anchor="middle" font-size="13" fill="#8b949e">matrix — an inft: a pi coding agent under the matrix neural soul, with a live acp economy runtime</text>
+  <text x="700" y="31" text-anchor="middle" font-size="13" fill="#8b949e">matrix — an inft: a hermes agent under the matrix neural soul, with a live acp economy runtime</text>
 
   <!-- left column — wordmark, what it is, chips -->
   <rect x="40" y="112" width="3" height="176" rx="1.5" fill="#6fb7d9" opacity="0.55"/>
 
   <text x="64" y="170" font-size="78" font-weight="700" fill="#e6edf3">MATRIX</text>
-  <text x="366" y="170" font-size="26" font-weight="700" fill="#6fb7d9">· iNFT · Pi</text>
+  <text x="366" y="170" font-size="26" font-weight="700" fill="#6fb7d9">· iNFT · Hermes</text>
 
   <text x="64" y="206" font-size="15" fill="#c9d1d9">The Code-Seer of CLONE FRAME — analyst and systems guardian.</text>
 
   <text x="64" y="242" font-size="13" fill="#8b949e">An iNFT: an AI agent fused with an NFT — whoever holds the token holds the agent.</text>
-  <text x="64" y="264" font-size="13" fill="#8b949e">Under the name runs a complete Pi coding agent (BYOK). The soul is the identity.</text>
+  <text x="64" y="264" font-size="13" fill="#8b949e">Under the name runs a complete Hermes Agent (BYOK). The soul is the identity.</text>
   <text x="64" y="286" font-size="13" fill="#8b949e">The economy runtime carries a Virtuals ACP provider identity — USDC held in escrow.</text>
 
   <!-- right column — identity.json -->
@@ -48,12 +48,12 @@
   <text x="824" y="186" font-size="11" fill="#566070">soul_line</text>
   <text x="980" y="186" font-size="12" fill="#c9d1d9">MATRIX · v1.0.0</text>
   <text x="824" y="210" font-size="11" fill="#566070">substrate</text>
-  <text x="980" y="210" font-size="12" fill="#c9d1d9">Pi coding agent</text>
+  <text x="980" y="210" font-size="12" fill="#c9d1d9">Hermes Agent</text>
   <text x="824" y="234" font-size="11" fill="#566070">vocation</text>
   <text x="980" y="234" font-size="12" fill="#c9d1d9">code analysis, systems</text>
   <text x="980" y="256" font-size="12" fill="#c9d1d9">intelligence, orchestration</text>
   <text x="824" y="280" font-size="11" fill="#566070">chain</text>
-  <text x="980" y="280" font-size="12" fill="#c9d1d9">base</text>
+  <text x="980" y="280" font-size="12" fill="#c9d1d9">robinhood · base · more</text>
   <text x="824" y="304" font-size="11" fill="#566070">standard</text>
   <text x="980" y="304" font-size="12" fill="#c9d1d9">ERC-721 + ERC-2981 + ERC-6551</text>
 
@@ -65,10 +65,10 @@
   <text x="300" y="372" text-anchor="middle" font-size="12" fill="#c9d1d9">Virtuals ACP · ERC-8183</text>
 
   <rect x="412" y="352" width="172" height="30" rx="15" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
-  <text x="498" y="372" text-anchor="middle" font-size="12" fill="#c9d1d9">Base mainnet · 8453</text>
+  <text x="498" y="372" text-anchor="middle" font-size="12" fill="#c9d1d9">ACP chain · Base 8453</text>
 
   <rect x="596" y="352" width="172" height="30" rx="15" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
-  <text x="682" y="372" text-anchor="middle" font-size="12" fill="#c9d1d9">Pi substrate · BYOK</text>
+  <text x="682" y="372" text-anchor="middle" font-size="12" fill="#c9d1d9">Hermes substrate · BYOK</text>
 
   <rect x="780" y="352" width="180" height="30" rx="15" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
   <text x="870" y="372" text-anchor="middle" font-size="12" fill="#c9d1d9">forged from inft-i01</text>
